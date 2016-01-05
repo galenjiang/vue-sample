@@ -1,0 +1,132 @@
+@charset "UTF-8";
+// 盒布局
+@mixin display-flex(){
+display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+display: -moz-box; /* 老版本语法: Firefox (buggy) */
+display: -ms-flexbox; /* 混合版本语法: IE 10 */
+display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+}
+
+// 主轴对齐 flex-start
+@mixin justify-content-start(){
+-webkit-box-pack: start;
+-moz-justify-content: flex-start;
+-webkit-justify-content: flex-start;
+justify-content: flex-start;
+}
+// 主轴对齐 flex-end
+@mixin justify-content-end(){
+-webkit-box-pack: end;
+-moz-justify-content: flex-end;
+-webkit-justify-content: flex-end;
+justify-content: flex-end;
+}
+// 主轴对齐 center
+@mixin justify-content-center(){
+-webkit-box-pack: center;
+-moz-justify-content: center;
+-webkit-justify-content: center;
+justify-content: center;
+}
+// 主轴对齐 space-between
+@mixin justify-content-space-between(){
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+// 主轴对齐 space-around  旧写法不兼容，用justify代替
+@mixin justify-content-space-around(){
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+
+// 交叉轴对齐 center
+@mixin align-items-start(){
+-webkit-box-align: start;
+-moz-align-items: flex-start;
+-webkit-align-items: flex-start;
+align-items: flex-start;
+}
+// 交叉轴对齐 end
+@mixin align-items-end(){
+-webkit-box-align: end;
+-moz-align-items: flex-end;
+-webkit-align-items: flex-end;
+align-items: flex-end;
+}
+// 交叉轴对齐 center
+@mixin align-items-center(){
+-webkit-box-align: center;
+-moz-align-items: center;
+-webkit-align-items: center;
+align-items: center;
+}
+// 交叉轴对齐 baseline
+@mixin align-items-center(){
+-webkit-box-align: baseline;
+-moz-align-items: baseline;
+-webkit-align-items: baseline;
+align-items: baseline;
+}
+// 交叉轴对齐 stretch
+@mixin align-items-stretch(){
+-webkit-box-align: stretch;
+-moz-align-items: stretch;
+-webkit-align-items: stretch;
+align-items: stretch;
+}
+
+// 显示方向 左到右
+@mixin flex-direction-row(){
+-webkit-box-direction: normal;
+-webkit-box-orient: horizontal;
+-moz-flex-direction: row;
+-webkit-flex-direction: row;
+flex-direction: row;
+}
+// 显示方向 右到左
+@mixin flex-direction-row-reverse(){
+-webkit-box-pack: end;
+-webkit-box-direction: reverse;
+-webkit-box-orient: horizontal;
+-moz-flex-direction: row-reverse;
+-webkit-flex-direction: row-reverse;
+flex-direction: row-reverse;
+}
+// 显示方向 上到下
+@mixin flex-direction-column(){
+-webkit-box-direction: normal;
+-webkit-box-orient: vertical;
+-moz-flex-direction: column;
+-webkit-flex-direction: column;
+flex-direction: column;
+}
+// 显示方向 上到下
+@mixin flex-direction-column-reverse(){
+  -webkit-box-pack: end;
+  -webkit-box-direction: reverse;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+// 是否允许子元素放大
+@mixin flex-grow(){
+-webkit-box-flex: 1.0;
+-moz-flex-grow: 1;
+-webkit-flex-grow: 1;
+flex-grow: 1;
+}
+// 是否允许子元素收缩
+@mixin flex-shrink(){
+-webkit-box-flex: 1.0;
+-moz-flex-shrink: 1;
+-webkit-flex-shrink: 1;
+flex-shrink: 1;
+}

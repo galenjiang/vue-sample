@@ -1,0 +1,37 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="Content-Type" content="text/html" charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black")
+    title vue
+    script(type="text/javascript").
+      document.documentElement.style.fontSize = document.documentElement.clientWidth*100/750*2 + 'px';
+    link(rel="stylesheet" href="../css/core/normalize.css" media="screen" title="no title" charset="utf-8")
+    link(rel="stylesheet" href="../css/lib/bootstrap.min.css" media="screen" title="no title" charset="utf-8")
+    link(rel="stylesheet" href="../css/app.css" media="screen" title="no title" charset="utf-8")
+  body
+    .wrapper(id="app")
+      header
+        ul(class="nav nav-pills")
+          li(role="presentation" v-bind:class="{'active': navGroup[0]}" v-touch:tap="tapme(0)")
+            a(v-link="{ path: '/page1' }") 第一页
+          li(role="presentation" v-bind:class="{'active': navGroup[1]}" v-touch:tap="tapme(1)")
+            a(v-link="{ path: '/page2' }") 第二页
+          li(role="presentation" class="dropdown" v-bind:class="{'active': navGroup[2]}" v-touch:tap="tapme(2)")
+             a(class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false") 更多
+              span(class="caret")
+             ul(class="dropdown-menu")
+              li
+                a(v-link="{ path: '/more/page3' }") 第三页
+              li
+                a(v-link="{ path: '/more/page4' }") 第四页
+              li 
+                a(v-link="{ path: '/more/page5' }") 第五页
+      .content
+        router-view
+      footer © 2015 我的个人主页 · Author by Galen ·
+
+    script(type="text/javascript" src="../js/app.js")
